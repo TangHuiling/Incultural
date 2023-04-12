@@ -1,0 +1,69 @@
+<view class="container">
+
+<view class="re_out">
+  <text class="register">欢迎来到注册页</text>
+</view>
+
+<view class="txt_out">
+<text class="txt">请输入您的昵称</text>
+</view>
+<view class="input_out">
+    <input class="input" bindinput="getName"></input> 
+</view>
+
+<view class="txt_out">
+<text class="txt">请输入您的手机号</text>
+</view>
+<view class="input_out">
+<input class="input" bindinput="getZhangHao" type="number"></input>
+</view>
+
+<view class="txt_out">
+<text class="txt">请输入您的密码</text>
+</view>
+<view class="input_out">
+<input class="input" bindinput="getMiMa"></input>
+<!-- <image class='showImg' bindtap='showPassword' src="{{isPassword ? '/images/241隐藏、不可见.png' : '/images/240显示、可见.png' }}"></image>
+ <input class="input" bindtap="getMiMa" password='{{isPassword}}' value='{{password}}'></input> -->
+</view> 
+
+<view class="txt_out">
+<text class="txt">请选择您的性别</text>
+</view>
+<view class="input_out">
+<picker bindchange="bindPickerChange_2" value="{{index_2}}" range="{{array_2}}">
+  <view class="txt_out">
+<view class="count_text">{{array_2[index_2]}}</view>
+  </view> 
+</picker>
+</view>
+
+<view class="txt_out">
+<text class="txt">请选择您的年龄</text>
+</view>
+<view class="input_out">
+<picker bindchange="bindPickerChange_3" value="{{index_3}}" range="{{array_3}}">
+  <view class="txt_out">
+<view class="count_text">{{array_3[index_3]}}</view>
+  </view>
+</picker>
+</view>
+
+<view class="txt_out">
+<text class="txt">请选择您的地区</text>
+</view>
+<view class="input_out">
+<picker bindchange="changeCity"  value="{{cityIndex}}" range="{{cityList}}">
+<view class="txt_out">
+  <view class="tui-picker-detail">{{cityList[cityIndex]}}</view>
+</view>
+</picker>
+</view>
+
+<button bindtap="zhuce" >注 册 并 登 录</button>
+
+</view>
+
+
+<!-- <image class='showImg' bindtap='showPassword' src="{{isPassword ? '/images/241隐藏、不可见.png' : '/images/240显示、可见.png' }}"></image>
+ <input name="password" password='{{isPassword}}' value='{{password}}'></input> -->

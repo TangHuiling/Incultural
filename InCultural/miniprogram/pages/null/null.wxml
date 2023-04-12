@@ -1,0 +1,29 @@
+<!--pages/null/null.wxml-->
+<view class="header">
+	<image class="bg_ware" src="../../images/wave.gif"></image>
+</view>
+
+<view class="hello">
+<text class="hello_1">Hi! :)\n</text>
+<text class="hello_2">欢迎来到</text>
+<text class="hello_3">"青年文化地图"</text>
+</view>
+
+<view class="out">
+  <view class="name_list" bindtap="list">
+  <text class="name_text">非遗名录</text>
+</view>
+
+<view>
+<view class="people_list" bindtap="up">
+  <text class="people_text">博主精选</text>
+</view>
+
+<view class="time_list" bindtap="time">
+  <text class="time_text">时间轴</text>
+</view>
+
+</view>
+
+</view>
+

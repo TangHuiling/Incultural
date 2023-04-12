@@ -1,0 +1,30 @@
+<!--pages/login.wxml-->
+
+
+<view class="container">
+
+  <view class="re_out">
+  <text class="register">欢迎来到登录页</text>
+  </view>
+
+    <view class="txt_out">
+      <text class="txt">请输入您注册时的手机号</text>
+    </view>
+
+    <view class="input_out">
+      <input class="input" bindinput="getZhanghao"></input>
+    </view>
+
+      <view class="txt_out">
+      <text class="txt">请输入密码：</text>
+      </view>
+
+      <view class="input_out">
+      <input class="input" bindinput="getMima"></input>
+      </view>
+
+      <view class="butt">
+          <button bindtap="login">登录</button>
+          <button bindtap="zhuce">没有账号？注册</button>
+      </view>
+</view>

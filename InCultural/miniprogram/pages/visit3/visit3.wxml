@@ -1,0 +1,137 @@
+<!--导航条-->
+<view wx:for='{{add}}' wx:for-item="item" class="solids-bottom padding-xs flex align-center">
+  <view class="bg">
+    <image class="" mode="scaleToFill"></image>
+  </view>
+  <view class="flex-sub text-center">
+    <view class="text-xxl padding">
+      <text class="text-white text-bold">{{item.title1}}</text>
+    </view>
+    <view class="text-white padding-bottom">{{item.title2}}</view>
+  </view>
+</view>
+<view class="navbar bg-white">
+ <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+<!--景区介绍-->
+<view wx:for='{{add}}' wx:for-item="item" hidden="{{currentTab!==0}}" class="bg-white">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="500">
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src1}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src2}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src3}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src4}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src5}}"/>
+    </swiper-item>
+  </swiper>
+
+  <view class="margin ">
+    <text decode="{{true}}" user-select="true">&emsp;&emsp;{{item.text1}}</text>
+  </view>
+  <view class="cu-bar solid-bottom">
+			<view class="action">
+				<text class="cuIcon-titles text-blue">发展历史</text>
+			</view>
+  </view>
+  <view class="margin ">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">&emsp;&emsp;{{item.text2}}</text>
+  </view>
+  <view class="margin" style="width: 95%; ">
+    <image class="margin-right margin-top"src="https://bkimg.cdn.bcebos.com/pic/0dd7912397dda1444c07d2bfb2b7d0a20cf486b5?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U3Mg==,g_7,xp_5,yp_5" style="width: 300rpx; border-radius: 8px;height: 254rpx; float: left; display: block; box-sizing: border-box"hspace="15rpx" vspace="15rpx">
+    </image>
+    <text class="margin " decode="{{true}}"  style="word-break:break-all;line-height: 1.8;" >&emsp;{{item.text3}}\n</text> 
+  </view>
+
+  <view class="cu-bar solid-bottom">
+			<view class="action">
+				<text class="cuIcon-titles text-blue">建筑布局</text>
+			</view>
+  </view>
+  <view class="margin ">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">&emsp;&emsp;{{item.text4}}</text>
+  </view>
+  <view class="margin" style="width: 95%; ">
+    <image class="margin-left margin-top"src="https://bkimg.cdn.bcebos.com/pic/eaf81a4c510fd9f9141aeb64252dd42a2834a4aa?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U3Mg==,g_7,xp_5,yp_5" style="width: 300rpx; border-radius: 8px;height: 254rpx; float: right; display: block; box-sizing: border-box"hspace="15rpx" vspace="15rpx">
+    </image>
+    <text class="margin " decode="{{true}}"  style="word-break:break-all;line-height: 1.8;" >&emsp;{{item.text5}}\n</text> 
+  </view>
+
+  <view class="cu-bar solid-bottom">
+			<view class="action">
+				<text class="cuIcon-titles text-blue">意义</text>
+			</view>
+  </view>
+  <view class="margin" style="width: 95%; ">
+    <image class="margin-right margin-top"src="https://bkimg.cdn.bcebos.com/pic/8d5494eef01f3a2926c76bc39925bc315c607cab?x-bce-process=image/resize,m_lfit,w_440,limit_1" style="width: 300rpx; border-radius: 8px;height: 240rpx; float: left; display: block; box-sizing: border-box"hspace="15rpx" vspace="15rpx">
+    </image>
+    <text class="margin " decode="{{true}}"  style="word-break:break-all;line-height: 1.8;" >&emsp;{{item.text6}}\n</text> 
+  </view>
+
+  <view class="bg-white" style="height: 8vh;"></view>
+</view>
+
+<!--旅游指南-->
+<view wx:for='{{add}}' wx:for-item="item" hidden="{{currentTab!==1}}" class="bg-white">
+  <view class="imgs"> 
+    <map
+      subkey="SBVBZ-GEDKJ-C4WFK-KJGZN-QA6QZ-FMF44"
+      style="width: 100%; height: 100%;  position: relative;"
+      latitude=" {{latitude}}"
+      longitude="{{longitude}}" 
+      scale="{{scale}}"
+      markers="{{markers}}" 
+        
+      bindregionchange="bindregionchange" 
+      bindtap="bindtapMap" 
+      bindmarkertap="showModal" 
+      data-id="{{markers}}"
+
+      >
+    </map>
+    <!-- 以下是导航部分 -->
+    <view class='list-guide' bindtap="onGuideTap" data-latitude='{{latitude}}' data-longitude='{{longitude}}' data-scale="{{scale}}" data-bankName="{{item.title1}}">
+      <button class="round" style="width: 100%; font-size: 28rpx;">导航</button>
+    </view>
+
+  </view>
+
+  <!-- 路线 -->
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>景点地址
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">南开区鼓楼檀府南（鼓楼东街北）</text>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>门票、开放时间
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">参观门票5元，小梨园相声票50元\n开放时间9:00-17:00，16:30停止售票</text>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>交通指南
+    </view>
+	</view>
+  <view class="margin">
+    <text style="font-weight: 900;line-height: 2;">公交\n</text><text decode="{{true}}" user-select="true" style="line-height: 1.8;">市内乘坐37、635、651、652北线、657、855、863、865路公交车均可到达。</text>
+  </view>
+  <view class="margin">
+    <text style="font-weight: 900;line-height: 2;">自驾\n</text><text decode="{{true}}" user-select="true" style="line-height: 1.8;">路线一：天津红桥区估衣街东北角长途汽车站至天津南开区鼓楼东街天津老城博物馆\n1. 向东 134 米\n2. 右转进入金钟桥大街向南 231 米\n3. 右转进入北马路向西 370 米\n4. 左转进入城厢中路向南 197 米\n5. 右转进入城厢中路向西 105 米\n6. 左转进入城厢中路向东南 1.1 公里\n
+    路线二： 天津红桥区西青道2号长途汽车西站至 天津南开区鼓楼东街天津老城博物\n1. 进入西青道向西 125 米\n2. 左转掉头进入西青道向东 409 米\n3. 右转进入西站前街向东南 1.2 公里\n4. 偏右转进入西马路向南 1.0 公里\n5. 左转进入南马路向东 0.8 公里\n6. 左转进入南门外大街向北 205 米\n7. 右转进入城厢中路向北 374 米</text>
+  </view>
+  <!---->
+  <view class="bg-white" style="height: 10vh;"></view>
+</view>

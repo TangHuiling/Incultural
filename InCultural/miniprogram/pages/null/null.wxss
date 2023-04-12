@@ -1,0 +1,104 @@
+/* pages/null/null.wxss */
+page{
+  background-color: #fff;/**页面背景色**/
+}
+.header {/**顶部背景**/
+  position: relative;/**相对于自己文档的位置来定位的，对旁边的元素没有影响**/
+  height:360rpx;/**设置顶部背景高度**/
+  background: linear-gradient(to bottom, #ccf2f8, #aad1eb);/**渐变色背景**/
+}
+.bg_ware {/**波浪动态图**/
+  position: absolute;/**相对于父标签来进行定位，这里的父标签的class是header**/
+  left: 0;/**相对于父标签左边界重合**/
+  bottom: 0;/**相对于父标签下边界重合**/
+  width: 100%;/**相对于父标签宽度为100%**/
+  mix-blend-mode: screen;/**透明部分用底部背景色填充，简称滤色**/
+  height: 120rpx;/**图片高度**/
+}
+.hello{
+  margin-left: 8%;
+  margin-top: 13%;
+}
+.hello_1{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.hello_2{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.hello_3{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.out{
+  display: flex;
+}
+
+.name_list{
+  background-color: red;
+  height:150px;
+  width:150px;
+  margin-left: 7%;
+  margin-top: 10%;
+  border-style: solid;
+  border-color: rgb(48, 32, 190);
+  border-radius: 10%;
+  background-color: rgb(48, 32, 190);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.name_text{
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.people_list{
+  background-color: blueviolet;
+  height:70px;
+  width:150px;
+  margin-left: 10%;
+  margin-top: 22%;
+  border-style: solid;
+  border-color: rgb(160, 200, 233);
+  border-radius: 5%;
+  background-color: rgb(160, 200, 233);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.time_list{
+  height:70px;
+  width:150px;
+  margin-left: 10%;
+  margin-right: 1%;
+  margin-top: 4%;
+  border-style: solid;
+  border-color: rgb(91, 143, 185);
+  border-radius: 5%;
+  background-color: rgb(91, 143, 185);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.people_text{
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.time_text{
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}

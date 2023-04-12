@@ -1,0 +1,217 @@
+<!--导航条-->
+<view wx:for='{{add}}' wx:for-item="item" class="solids-bottom padding-xs flex align-center">
+  <view class="bg">
+    <image class="" mode="scaleToFill"></image>
+  </view>
+  <view class="flex-sub text-center">
+    <view class="text-xxl padding">
+      <text class="text-white text-bold">{{item.title1}}</text>
+    </view>
+    <view class="text-white padding-bottom">{{item.title2}}</view>
+  </view>
+</view>
+<view class="navbar bg-white">
+ <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+<!--景区介绍-->
+<view wx:for='{{add}}' wx:for-item="item" hidden="{{currentTab!==0}}" class="bg-white">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="500">
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src1}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src2}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src3}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src4}}"/>
+    </swiper-item>
+  </swiper>
+
+  <view class="margin ">
+    <text decode="{{true}}" user-select="true">&emsp;&emsp;{{item.text1}}</text>
+  </view>
+  <view class="cu-bar solid-bottom">
+			<view class="action">
+				<text class="cuIcon-titles text-blue">主要景点</text>
+			</view>
+  </view>
+  <view class="padding bg-white">
+    <view class="action margin-bottom" style="font-weight: 600;text-align: center;">
+				<text decode="{{true}}" user-select="true" >山门</text>
+		</view>
+    <view class="flex bg-white">
+      <view class="flex-twice  radius" >
+        <text decode="{{true}}" user-select="true">&emsp;{{item.text2}}</text>
+        <text decode="{{true}}" user-select="true">&emsp;{{item.text3}}</text>
+
+      </view>
+      <view class="flex-sub  margin-top margin-left margin-bottom radius" >
+        <view class="cu-card case" :class="isCard?'no-card':''" >
+          <view class="image shadow">
+            <image class="round" src="{{item.pic1}}"
+            mode="widthFix"></image>
+            <view class="content flex-sub">
+							<view class="text-grey text-center">独乐寺</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>   
+  </view>
+  <!---->
+  <view class="padding bg-white">
+    <view class="action margin-bottom" style="font-weight: 600;text-align: center;">
+				<text decode="{{true}}" user-select="true" >观音阁</text>
+		</view>
+    <view class="flex bg-white">
+      <view class="flex-twice  radius" >
+        <text decode="{{true}}" user-select="true">&emsp;{{item.text4}}</text>
+        <text decode="{{true}}" user-select="true">&emsp;{{item.text5}}</text>
+
+      </view>
+      <view class="flex-sub  margin-top margin-left margin-bottom radius" >
+        <view class="cu-card case" :class="isCard?'no-card':''" >
+          <view class="image shadow">
+            <image class="round" src="{{item.pic2}}"
+            mode="widthFix"></image>
+            <image class="round" src="{{item.pic3}}"
+            mode="widthFix"></image>
+            <view class="content flex-sub">
+							<view class="text-grey text-center">观音阁</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>   
+  </view>
+
+
+  <view class="padding bg-white">
+    <view class="action margin-bottom" style="font-weight: 600;text-align: center;">
+				<text decode="{{true}}" user-select="true" >壁画</text>
+		</view>
+    <view class="flex bg-white">
+      <view class="flex-twice  radius" >
+        <text decode="{{true}}" user-select="true">&emsp;{{item.text6}}</text>
+
+      </view>
+      <view class="flex-sub  margin-top margin-left margin-bottom radius" >
+        <view class="cu-card case" :class="isCard?'no-card':''" >
+          <view class="image shadow">
+            <image class="round" src="{{item.pic4}}"
+            mode="widthFix"></image>
+            <view class="content flex-sub">
+							<view class="text-grey text-center">壁画</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>   
+  </view>
+
+  <view class="padding bg-white">
+    <view class="action margin-bottom" style="font-weight: 600;text-align: center;">
+				<text decode="{{true}}" user-select="true" >韦驮亭</text>
+		</view>
+    <view class="flex bg-white">
+      <view class="flex-twice  radius" >
+        <text decode="{{true}}" user-select="true">&emsp;{{item.text7}}</text>
+
+      </view>
+      <view class="flex-sub  margin-top margin-left margin-bottom radius" >
+        <view class="cu-card case" :class="isCard?'no-card':''" >
+          <view class="image shadow">
+            <image class="round" src="{{item.pic5}}"
+            mode="widthFix"></image>
+            <view class="content flex-sub">
+							<view class="text-grey text-center">韦驮亭</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>   
+  </view>
+  <!---->
+  <view class="bg-white" style="height: 8vh;"></view>
+</view>
+
+<!--旅游指南-->
+<view wx:for='{{add}}' wx:for-item="item" hidden="{{currentTab!==1}}" class="bg-white">
+  <view class="imgs"> 
+    <map
+      subkey="SBVBZ-GEDKJ-C4WFK-KJGZN-QA6QZ-FMF44"
+      style="width: 100%; height: 100%;  position: relative;"
+      latitude=" {{latitude}}"
+      longitude="{{longitude}}" 
+      scale="{{scale}}"
+      markers="{{markers}}" 
+        
+      bindregionchange="bindregionchange" 
+      bindtap="bindtapMap" 
+      bindmarkertap="showModal" 
+      data-id="{{markers}}"
+
+      >
+    </map>
+    <!-- 以下是导航部分 -->
+    <view class='list-guide' bindtap="onGuideTap" data-latitude='{{latitude}}' data-longitude='{{longitude}}' data-scale="{{scale}}" data-bankName="{{item.title1}}">
+      <button class="round" style="width: 100%; font-size: 28rpx;">导航</button>
+    </view>
+
+  </view>
+
+  <!-- 路线 -->
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>景区位置
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">中国>天津市>蓟州区>渔阳镇>州河湾镇>天津市蓟州区京津州河科技产业园</text>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>景点分布
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">独乐寺景区内主要景点有：观音阁、韦驮亭、报恩院、乾隆行宫、乾隆碑刻、独乐寺山门、独乐寺塔、观音菩萨像等。</text>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>景区特色
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">摄影、徒步、观光、寺庙、古迹</text>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>游览路线
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">&emsp;1、渔阳名胜游：\n独乐寺 → 盘山（一日游）；独乐寺 → 黄崖关（一日游）；独乐寺 → 清东陵（一日游）；独乐寺 → 黄崖关 → 清东凌 → 盘山（二日或三日游）。\n&emsp;2、乾隆胜迹踏寻游：独乐寺 → 盘山 → 清东凌（二日游）。\n&emsp;3、周末休闲游：\n独乐寺 → 渔阳古街 → 白塔 → 鲁班庙 → 府君山（免票） → 翠屏湖（免票）（一日游）；独乐寺 → 梨木台（一日游）；独乐寺 → 九山顶（二日游）；独乐寺 → 八仙山 → 清东凌（二日游）；独乐寺 → 石趣园 → 盘山（二日游）。</text>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>最佳游览时间
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">&emsp;春、秋两季气候温和，是游天津的大好季节。</text>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>购物推荐
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">&emsp;蓟县小磨香油、蓟县野山珍、蓟县杂粮、蓟县松子、蓟县花生、蓟县无公害蔬菜、蓟县金丝小枣、蓟县玉米渣、山区蜂蜜、蓟县大枣、蓟县核桃、天津板栗等。</text>
+  </view>
+  <!---->
+  <view class="bg-white" style="height: 10vh;"></view>
+</view>

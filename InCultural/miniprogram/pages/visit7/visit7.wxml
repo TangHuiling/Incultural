@@ -1,0 +1,132 @@
+<!--导航条-->
+<view wx:for='{{add}}' wx:for-item="item" class="solids-bottom padding-xs flex align-center">
+  <view class="bg">
+    <image class="" mode="scaleToFill"></image>
+  </view>
+  <view class="flex-sub text-center">
+    <view class="text-xxl padding">
+      <text class="text-white text-bold">{{item.title1}}</text>
+    </view>
+    <view class="text-white padding-bottom">{{item.title2}}</view>
+  </view>
+</view>
+<view class="navbar bg-white">
+ <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+<!--景区介绍-->
+<view wx:for='{{add}}' wx:for-item="item" hidden="{{currentTab!==0}}" class="bg-white">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="500">
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src1}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src2}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src3}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src4}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src5}}"/>
+    </swiper-item>
+  </swiper>
+
+  <view class="margin ">
+    <text decode="{{true}}" user-select="true">&emsp;&emsp;{{item.text1}}\n
+      &emsp;&emsp;{{item.text2}}</text>
+  </view>
+  <view class="cu-bar solid-bottom">
+			<view class="action">
+				<text class="cuIcon-titles text-blue">建筑格局</text>
+			</view>
+  </view>
+  <view class="padding bg-white">
+    <view class="flex  p-xs margin-bottom-sm mb-sm">
+      <view class="flex-twice padding-right radius"><view class="cu-card case" :class="isCard?'no-card':''" >
+          <view class="image shadow">
+            <image class="" src="{{item.pic1}}"
+            mode="widthFix"></image>
+          </view>
+        </view></view>
+					<view class="flex-twice padding-right radius"><view class="cu-card case" :class="isCard?'no-card':''" >
+          <view class="image shadow">
+            <image class="" src="{{item.pic2}}"
+            mode="widthFix"></image>
+          </view>
+        </view></view>
+					<view class="flex-twice padding-right radius"><view class="cu-card case" :class="isCard?'no-card':''" >
+          <view class="image shadow">
+            <image class="" src="{{item.pic3}}"
+            mode="widthFix"></image>
+          </view>
+        </view></view>
+
+		</view>
+
+    <view class="margin ">
+    <text decode="{{true}}" user-select="true">&emsp;&emsp;{{item.text3}}\n
+      &emsp;&emsp;{{item.text4}}</text>
+  </view>
+  </view>
+  <!---->
+
+  <view class="bg-white" style="height: 8vh;"></view>
+</view>
+
+<!--旅游指南-->
+<view wx:for='{{add}}' wx:for-item="item" hidden="{{currentTab!==1}}" class="bg-white">
+  <view class="imgs"> 
+    <map
+      subkey="SBVBZ-GEDKJ-C4WFK-KJGZN-QA6QZ-FMF44"
+      style="width: 100%; height: 100%;  position: relative;"
+      latitude=" {{latitude}}"
+      longitude="{{longitude}}" 
+      scale="{{scale}}"
+      markers="{{markers}}" 
+        
+      bindregionchange="bindregionchange" 
+      bindtap="bindtapMap" 
+      bindmarkertap="showModal" 
+      data-id="{{markers}}"
+
+      >
+    </map>
+    <!-- 以下是导航部分 -->
+    <view class='list-guide' bindtap="onGuideTap" data-latitude='{{latitude}}' data-longitude='{{longitude}}' data-scale="{{scale}}" data-bankName="{{item.title1}}">
+      <button class="round" style="width: 100%; font-size: 28rpx;">导航</button>
+    </view>
+
+  </view>
+
+  <!-- 路线 -->
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>地理位置
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">天津市西青区杨柳青镇估衣街47号</text>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>门票信息
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">成人票: 25元;\n优待票 (儿童、学生、老人) : 13元\n石家大院语音讲解: 2元</text>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>交通指南
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">公交：可乘坐824路、669路、153路、672路、175路公交车至石家大院站，另有便民2路、津西2路等便民公交。</text>
+  </view>
+
+
+  <!---->
+  <view class="bg-white" style="height: 10vh;"></view>
+</view>

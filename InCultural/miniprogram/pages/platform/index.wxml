@@ -1,0 +1,48 @@
+<!--pages/platform/index.wxml-->
+
+<view class = "cover">
+<image class="gauss" src="cloud://cloud1-3gh117wta198d6cd.636c-cloud1-3gh117wta198d6cd-1314390452/testDir/jiefangqiao.jpg"></image>
+</view>
+
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </swiper-item>
+</swiper>
+
+<view class="str text-white shadow">
+<text class="text-xxl text-bold">乐道拾遗·匠心筑遗\n</text>
+<text style="font-size: 14px;">
+有一群人，始终在遗忘的边际处坚守，在功利的繁荣里坚持，传千年之文遗，燃万古之明灯。</text>
+<text>\n</text>
+</view>
+
+<view>
+	<view class="flex bg-mask">
+		<view class="flex-sub padding-sm margin-xs radius shadow bg-white">
+      <view class="bilibili" bindtap="tobilibili">
+        <image class="bilibili_icon" src="../../icon/bilibili.png"></image> 
+      </view>
+    </view>
+		<view class="flex-twice padding-sm margin-xs radius shadow bg-white"> 
+      <view class="weibo" bindtap="toweibo">
+        <image class="weibo_icon" src="../../icon/weibo.png"></image> 
+      </view>
+    </view>
+  </view>
+	<view class="flex bg-mask">
+    <view class="flex-twice padding-sm margin-xs radius shadow bg-white"> 
+      <view class="douyin" bindtap="todouyin">
+        <image class="douyin_icon" src="../../icon/douyin.png"></image> 
+      </view>
+    </view>
+    <view class="flex-sub padding-sm margin-xs radius shadow bg-white">
+      <view class="xiaohongshu" bindtap="toxiaohongshu">
+        <image class="xiaohongshu_icon" src="../../icon/xiaohongshu.png"></image> 
+      </view>
+    </view>
+	</view>
+</view>

@@ -1,0 +1,95 @@
+<!--导航条-->
+<view wx:for='{{add}}' wx:for-item="item" class="solids-bottom padding-xs flex align-center">
+  <view class="bg">
+    <image class="" mode="scaleToFill"></image>
+  </view>
+  <view class="flex-sub text-center">
+    <view class="text-xxl padding">
+      <text class="text-white text-bold">{{item.title1}}</text>
+    </view>
+    <view class="text-white padding-bottom">{{item.title2}}</view>
+  </view>
+</view>
+<view class="navbar bg-white">
+ <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+<!--景区介绍-->
+<view wx:for='{{add}}' wx:for-item="item" hidden="{{currentTab!==0}}" class="bg-white">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="500">
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src1}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src2}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src3}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src4}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src5}}"/>
+    </swiper-item>
+  </swiper>
+
+  <view class="margin ">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">&emsp;&emsp;{{item.text1}}\n&emsp;&emsp;{{item.text2}}</text>
+  </view>
+
+  <view class="bg-white" style="height: 8vh;"></view>
+</view>
+
+<!--旅游指南-->
+<view wx:for='{{add}}' wx:for-item="item" hidden="{{currentTab!==1}}" class="bg-white">
+  <view class="imgs"> 
+    <map
+      subkey="SBVBZ-GEDKJ-C4WFK-KJGZN-QA6QZ-FMF44"
+      style="width: 100%; height: 100%;  position: relative;"
+      latitude=" {{latitude}}"
+      longitude="{{longitude}}" 
+      scale="{{scale}}"
+      markers="{{markers}}" 
+        
+      bindregionchange="bindregionchange" 
+      bindtap="bindtapMap" 
+      bindmarkertap="showModal" 
+      data-id="{{markers}}"
+
+      >
+    </map>
+    <!-- 以下是导航部分 -->
+    <view class='list-guide' bindtap="onGuideTap" data-latitude='{{latitude}}' data-longitude='{{longitude}}' data-scale="{{scale}}" data-bankName="{{item.title1}}">
+      <button class="round" style="width: 100%; font-size: 28rpx;">导航</button>
+    </view>
+
+  </view>
+
+  <!-- 路线 -->
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>景区地址
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">天津市静海区双塘镇西双塘村西兴路178号</text>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>交通及气候
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">&emsp;&emsp;该村紧邻京沪铁路、京沪高速、京福公路、京杭大运河、104国道，所以交通便捷，由此不经中转，便可北通京都，南达江浙古时这里是运河码头，南来北往异常繁荣。当时有句顺口溜:“上有天堂，下游苏杭，除了北京，就数双塘”。\n &emsp;&emsp;西双塘村地处渤海之滨，为退海成陆和河流冲积而成的平原。地势低洼，平均海拔在3-4米之间，土壤盐碱，为褐色粘土。该村属温带半湿润季风气候，四季分明，光照条件充足，全年平均气温12.4度，降水量570毫米左右，无霜天214天左右，日照2700小时左右。</text>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>特色产业
+    </view>
+	</view>
+  <view class="margin">
+    <text style="font-weight: 900;line-height: 2;">旅游业:\n</text><text decode="{{true}}" user-select="true" style="line-height: 1.8;">&emsp;村内景区有:东五台寺，仿古购物一条街，荷花塘，凤凰台文化广场，风情书画一条街，维拉庄园，生态园，老年城等。</text><text style="font-weight: 900;line-height: 2;">农业:\n</text><text decode="{{true}}" user-select="true" style="line-height: 1.8;">&emsp;西双塘实行大集体经营化方式，在保证村名集体耕作集体收获的同时发展特色农业采摘。吸引了市区的居民前来采摘观光。</text>
+  </view>
+  <!---->
+  <view class="bg-white" style="height: 10vh;"></view>
+</view>

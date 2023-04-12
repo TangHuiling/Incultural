@@ -1,0 +1,166 @@
+<!--导航条-->
+<view wx:for='{{add}}' wx:for-item="item" class="solids-bottom padding-xs flex align-center">
+  <view class="bg">
+    <image class="" mode="scaleToFill"></image>
+  </view>
+  <view class="flex-sub text-center">
+    <view class="text-xxl padding">
+      <text class="text-white text-bold">{{item.title1}}</text>
+    </view>
+    <view class="text-white padding-bottom">{{item.title2}}</view>
+  </view>
+</view>
+<view class="navbar bg-white">
+ <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+<!--景区介绍-->
+<view wx:for='{{add}}' wx:for-item="item" hidden="{{currentTab!==0}}" class="bg-white">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="500">
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src1}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src2}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src3}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src4}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src5}}"/>
+    </swiper-item>
+  </swiper>
+
+  <view class="margin ">
+    <text decode="{{true}}" user-select="true">&emsp;&emsp;{{item.text1}}\n
+      &emsp;&emsp;{{item.text2}}</text>
+  </view>
+  <view class="cu-bar solid-bottom">
+			<view class="action">
+				<text class="cuIcon-titles text-blue">{{item.left1}}</text>
+			</view>
+  </view>
+  <view class="padding bg-white">
+    <view class="flex bg-white">
+      <view class="flex-twice  radius" >
+        <text decode="{{true}}" user-select="true">&emsp;{{item.text3}}</text>
+      </view>
+      <view class="flex-sub  margin-top margin-left margin-bottom radius" >
+        <view class="cu-card case" :class="isCard?'no-card':''" >
+          <view class="image shadow">
+            <image class="round margin-top" style="border-radius: 10rpx;" src="{{item.pic1}}"
+            mode="widthFix"></image>
+            <view class="content flex-sub">
+							<view class="text-grey text-center">{{item.lt2}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>   
+  </view>
+
+  <!---->
+  <view class="padding bg-white">
+    <view class="action margin-bottom" style="font-weight: 600;text-align: center;">
+				<text decode="{{true}}" user-select="true" > {{item.lt7}}</text>
+		</view>
+    <view class="flex">     
+      <view class="flex-sub  margin-top margin-right margin-bottom radius" >
+        <view class="cu-card case" :class="isCard?'no-card':''" >
+          <view class="image shadow">
+            <image class="round" src="{{item.pic2}}"
+            mode="widthFix"></image>
+            <view class="content flex-sub">
+							<view class="text-grey text-center">{{item.lt8}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="flex-twice  radius" >
+        <text decode="{{true}}" user-select="true">&emsp;&emsp;{{item.text8}}</text>
+      </view>
+    </view>
+    <view class="margin-bottom margin-top">
+        <text decode="{{true}}" user-select="true" style="line-height: 1.4;">&emsp;&emsp;{{item.text9}}</text>
+    </view>  
+  </view>
+  <!---->
+  <view class="padding bg-white">
+    <view class="action margin-bottom" style="font-weight: 600;text-align: center;">
+				<text decode="{{true}}" user-select="true" > {{item.lt9}}</text>
+		</view>
+    <view class="flex">     
+      <view class="flex-sub margin-right margin-bottom radius" >
+        <view class="cu-card case" :class="isCard?'no-card':''" >
+          <view class="image shadow">
+            <image class="round margin-top" style="border-radius: 0rpx;" src="{{item.pic4}}"
+            mode="widthFix" style="border-radius: 25px;"></image>
+            <view class="content flex-sub">
+							<view class="text-grey text-center">{{item.lt10}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="flex-twice  margin-bottom radius" >
+        <text decode="{{true}}" user-select="true">&emsp;&emsp;{{item.text10}}</text>
+      </view>
+    </view>
+
+    <view class="margin-bottom">
+      <text decode="{{true}}" user-select="true" style="line-height: 1.4;">&emsp;&emsp;{{item.text11}}</text>
+    </view>
+  </view>
+  
+  <!---->
+  <view class="bg-white" style="height: 8vh;"></view>
+</view>
+
+<!--旅游指南-->
+<view wx:for='{{add}}' wx:for-item="item" hidden="{{currentTab!==1}}" class="bg-white">
+  <view class="imgs"> 
+    <map
+      subkey="SBVBZ-GEDKJ-C4WFK-KJGZN-QA6QZ-FMF44"
+      style="width: 100%; height: 100%;  position: relative;"
+      latitude=" {{latitude}}"
+      longitude="{{longitude}}" 
+      scale="{{scale}}"
+      markers="{{markers}}" 
+        
+      bindregionchange="bindregionchange" 
+      bindtap="bindtapMap" 
+      bindmarkertap="showModal" 
+      data-id="{{markers}}"
+
+      >
+    </map>
+    <!-- 以下是导航部分 -->
+    <view class='list-guide' bindtap="onGuideTap" data-latitude='{{latitude}}' data-longitude='{{longitude}}' data-scale="{{scale}}" data-bankName="{{item.title1}}">
+      <button class="round" style="width: 100%; font-size: 28rpx;">导航</button>
+    </view>
+
+  </view>
+
+  <!-- 路线 -->
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>景点资料
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">景点地址：天津市南开区古文化街80号\n交通指南：地铁二号线“东北角”站下车，步行可达,或乘公交至“东北角”站或“东马路”站\n门票信息：免费，需凭有效证件到领票处领取门票，团体观众需预约参观;\n开放时间：周二到周日9:00——16:30（16:00停止入馆），周一闭馆;\n最佳游览季节：四季皆宜。（景点内未配备暖气，寒冷天气注意保暖。）\n预计游览时长：15分钟左右，细致游览需要半小时以上。</text>
+  </view>
+
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>周边设施
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">住宿：古文化街玉皇阁附近有汉庭酒店、格林豪泰酒店和如家商旅酒店。\n餐饮：古文化街内遍布餐饮点，推荐东马路上的津门永胜包子铺。此外，古文化街西北方向有肯德基及其他餐馆。\n购物：古文化街内售卖服饰、古玩、字画、首饰、玩具、工艺品和乐器等商品。古文化街西北方向的“大胡同”售卖服饰、箱包、小电器以及各种小商品。\n停车场：古文化街周边有很多停车场，例如玉皇阁附近和天津银行附近。</text>
+  </view>
+  
+  <!---->
+  <view class="bg-white" style="height: 10vh;"></view>
+</view>

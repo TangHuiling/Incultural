@@ -1,0 +1,42 @@
+<!--pages/media/index.wxml-->
+<view class="padding bg-gradual-blue">
+
+  <view class="pad">
+    <image src="{{pic}}" class="pic" ></image>
+  </view>
+  <view class="pad">
+    <text class = "text-name">{{name}}\n</text>
+  </view>
+  <view class="pad">
+    <text class = "intro">{{introduce}}\n</text>
+  </view>
+
+  <view class="line"></view>
+
+  <view class="img_out">
+  <view class="img1">
+    <image src="{{image1}}" style="border-style: solid;border-radius: 5%; border-width: 0;"></image>
+  </view>
+</view>
+  <view class="out-intro">
+<text class="sp-intro">· 博主介绍</text>
+</view>
+  <view class="io">
+    <text>{{intro1}}\n</text>
+  </view>
+
+<view class="img_out">
+  <view class="img1">
+    <image src="{{image2}}" style="border-style: solid;border-radius: 5%; border-width: 0;"></image>
+  </view>
+</view>
+<view class="out-intro">
+<text class="sp-intro">· 相关技术介绍</text>
+</view>
+  <view class="io">
+    <text>{{intro2}}\n</text>
+  </view>
+
+</view>
+
+

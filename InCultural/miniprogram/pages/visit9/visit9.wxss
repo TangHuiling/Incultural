@@ -1,0 +1,75 @@
+.imgs{
+  /* border: rgb(36, 39, 90) 3px solid; */
+  width: 100%;
+  height: 30vh;
+}
+
+.bg{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:20%;
+  background:url('https://bkimg.cdn.bcebos.com/pic/b3119313b07eca806538a3610e7580dda144ac3425a4?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UxMTY=,g_7,xp_5,yp_5')
+  no-repeat #000;
+  background-size: auto;
+  z-index:-1;
+}
+
+
+page{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+ }
+ .navbar{
+  flex: none;
+  display: flex;
+  background: #fff;
+ }
+ .navbar .item{
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 80rpx;
+ }
+ .navbar .item.active{
+  color: #283fc2;
+ }
+
+ .navbar .item.active:after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+  background: #283fc2;
+ }
+
+.list-guide{
+  position: absolute;
+  /* border:red 3px solid; */
+  left:0;
+  top:44%;
+  width: 20%;
+  text-align: center;
+}
+.round{
+  background-color: green;
+  color: white;
+}
+.swiper{
+  height: 300rpx;
+  margin: 5% 0 5% 0;
+}
+swiper-item{
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+.show1{
+  border: 1px solid red;
+  
+}

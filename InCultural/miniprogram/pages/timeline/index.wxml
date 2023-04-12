@@ -1,0 +1,131 @@
+<!--pages/timeline/index.wxml-->
+<view class="cu-timeline">
+
+	<view class="cu-time">1997年</view>
+	<view class="cu-item text-green">
+		<view class="content bg-green shadow-blur">
+			联合国教科文组织通过建立《人类口头和非物质遗产代表作》的决议
+		</view>
+	</view>
+
+  <view class="cu-time">2000年</view>
+	<view class="cu-item cur">
+		<view class="content bg-grey shadow-blur">
+			全国人大、文化部、国家文物局联合召开“全国民族民间文化保护工作立法座谈会”，此后逐步形成《中华人民共和国民族民间传统文化保护法》（草案）
+		</view>
+    <view class="content bg-grey">
+			云南省出台《云南省民族民间传统文化保护条例》，开辟非遗保护地方性立法的先河
+		</view>
+	</view>
+
+  <view class="cu-time">2001年</view>
+	<view class="cu-item text-blue">
+		<view class="content bg-blue shadow-blur">
+			评选出了首批人类口头和非物质遗产代表作，其中包含了中国的昆曲
+		</view>
+	</view>
+
+  <view class="cu-time">2003年</view>
+  <view class="cu-item text-cyan">
+		<view class="content bg-cyan shadow-blur">
+			评选了第二批人类口头和非物质遗产代表作，包含中国古琴艺术
+		</view>
+    <view class="content bg-cyan shadow-blur">
+			建立“中国民族民间文化保护工程”领导小组，成立了由各学科专家组成的专家委员会，并分别在文化部和中国艺术研究院设立了领导小组办公室和研究保护中心
+		</view>
+    <view class="content bg-cyan shadow-blur">
+			<text>1月</text>国家文化部和财政部、国家民族事务委员会、中国文化艺术联合会共同启动了“中国民族民间文化保护工程”
+		</view>
+    <view class="content bg-cyan shadow-blur">
+			<text>10月</text>联合国教科文组织第32届大会通过了《保护非物质文化遗产公约》，“非物质文化遗产”的概念自此传播开来。此前评选的“口头和非物质遗产”后来也被纳入非物质文化遗产的名录
+		</view>
+	</view>
+		
+
+
+	<view class="cu-time">2004年</view>
+	<view class="cu-item cur cuIcon-noticefill">
+		<view class="content bg-green shadow-blur">
+			《中华人民共和国民族民间传统文化保护法》（草案）更名为《中华人民共和国非物质文化遗产保护法》（草案）
+		</view>
+    <view class="content bg-green shadow-blur">
+			<text>8月</text>第十届全国人大常委会第11次会议审议批准我国加入《公约》。同时，全国人大还把正在研究中的《中华人民共和国民族民间传统文化保护法（草案）》，更名为《中华人民共和国非物质文化遗产保护法》（草案）
+		</view>
+	</view>
+
+
+  <view class="cu-time">2005年</view>
+  <view class="cu-item text-grey cuIcon-evaluate_fill">
+  <view class="content bg-grey shadow-blur">
+			<text>3月</text> 国务院印发《关于加强我国非物质文化遗产保护工作的意见》
+		</view>
+    <view class="content bg-grey shadow-blur">
+			<text>5月5日</text> 浙江省公布第一批省级非遗名录，是国内第一个公布非遗名录的省份
+		</view>
+    <view class="content bg-cyan">
+			<text>7月</text> 郑孝燮等11名专家学者联名致信党中央、国务院领导同志，倡议中国设立“文化遗产日”
+		</view>
+    <view class="content bg-grey shadow-blur">
+			<text>11月</text> 联合国教科文组织公布第三批“人类口头和非物质遗产代表作”，中国申报的“中国新疆维吾尔木卡姆艺术”和中国、蒙古国联合申报的“蒙古族长调民歌”入选
+		</view>
+    <view class="content bg-grey shadow-blur">
+			<text>12月</text> 国务院印发《关于加强文化遗产保护的通知》
+		</view>
+    <view class="content bg-red shadow-blur">
+			<text>12月</text> 国务院决定从2006年起，每年6月的第二个星期六为中国的“文化遗产日”
+		</view>
+  <view class="content bg-grey shadow-blur">
+    非物质文化遗产保护工作部际联席会议制度建立，联席会议由文化部、发展改革委、教育部、建设部、旅游局等9个部门组成
+		</view>
+  </view>
+
+  <view class="cu-time">2006年</view>
+  <view class="cu-item text-grey cuIcon-evaluate_fill">
+  <view class="bg-blue content">
+			<text>5月</text> 国务院批准公布第一批国家级非物质文化遗产名录
+		</view>
+    <view class="content bg-grey shadow-blur">
+    第39号文化部令《国家级非物质文化遗产保护与管理暂行办法》，从“负面清单”的角度提出了禁止性要求
+		</view>
+    <view class="content bg-blue shadow-blur">
+    在9个部门联合成立联席会议的基础上，增加了公安部、国土资源部、海关总署、林业局、法制办等，建立了由15个部门组成的国家文化遗产保护领导小组。
+		</view>
+  </view>
+  
+
+  <view class="cu-time">2007年</view>
+  <view class="cu-item text-grey cuIcon-evaluate_fill">
+  <view class="content bg-grey shadow-blur">
+			<text>6月</text> 文化部正式批准设立闽南文化生态保护实验区，这是中国第一个国家级文化生态保护区
+		</view>
+  </view>
+
+  <view class="cu-time">2010年</view>
+  <view class="cu-item text-cyan">
+  <view class="content bg-cyan shadow-blur">
+			<text>10月</text> 第一届中国非物质文化遗产博览会在山东济南举办
+		</view>
+  </view>
+
+  <view class="cu-time">2011年</view>
+  <view class="cu-item text-grey cuIcon-evaluate_fill">
+  <view class="content bg-grey shadow-blur">
+			<text>2月25日</text> 第十一届全国人大常委会第十九次会议审议通过《中华人民共和国非物质文化遗产法》，去掉了“保护”二字，内涵更为丰富，条例中出现“鼓励和支持”的提法，具有里程碑意义
+		</view>
+  </view>
+
+  <view class="cu-time">2017年</view>
+  <view class="cu-item text-blue">
+  <view class="content bg-blue shadow-blur">
+			<text>2月25日</text> 国务院同意调整“文化遗产日”为“文化和自然遗产日”
+		</view>
+  </view>
+
+  <view class="cu-time">2022年</view>
+	<view class="cu-item text-grey cuIcon-evaluate_fill">
+		<view class="bg-cyan content">
+			<text>12月</text> 中国入选联合国教科文组织非物质文化遗产名录（名册）项目总数达43项
+		</view>
+	</view>
+
+</view>

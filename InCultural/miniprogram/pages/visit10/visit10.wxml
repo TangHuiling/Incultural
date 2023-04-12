@@ -1,0 +1,224 @@
+<!--导航条-->
+<view wx:for='{{add}}' wx:for-item="item" class="solids-bottom padding-xs flex align-center">
+  <view class="bg">
+    <image class="" mode="scaleToFill"></image>
+  </view>
+  <view class="flex-sub text-center">
+    <view class="text-xxl padding">
+      <text class="text-white text-bold">{{item.title1}}</text>
+    </view>
+    <view class="text-white padding-bottom">{{item.title2}}</view>
+  </view>
+</view>
+<view class="navbar bg-white">
+ <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+<!--景区介绍-->
+<view wx:for='{{add}}' wx:for-item="item" hidden="{{currentTab!==0}}" class="bg-white">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="500">
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src1}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src2}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src3}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src4}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src5}}"/>
+    </swiper-item>
+  </swiper>
+
+  <view class="margin ">
+    <text decode="{{true}}" user-select="true">&emsp;&emsp;{{item.text1}}\n
+      &emsp;&emsp;{{item.text2}}</text>
+  </view>
+  <view class="cu-bar solid-bottom">
+			<view class="action">
+				<text class="cuIcon-titles text-blue">历史文化</text>
+			</view>
+  </view>
+  <view class="padding bg-white">
+    <view class="action margin-bottom" style="font-weight: 600;text-align: center;">
+				<text decode="{{true}}" user-select="true" >【历史】</text>
+		</view>
+    <view class="flex bg-white">
+      <view class="flex-twice  radius" >
+        <text decode="{{true}}" user-select="true">&emsp;{{item.text3}}</text>
+      </view>
+      <view class="flex-sub  margin-top margin-left margin-bottom radius" >
+        <view class="cu-card case" :class="isCard?'no-card':''" >
+          <view class="image shadow">
+            <image class="round" src="{{item.pic1}}"
+            mode="widthFix"></image>
+            <view class="content flex-sub">
+							<view class="text-grey text-center">皇都卫城</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="action margin-top margin-bottom" style="font-weight: 600;text-align: center;">
+				<text decode="{{true}}" user-select="true" >【风光】</text>
+		</view>
+    <view class="flex bg-white">
+      <view class="flex-twice  radius" >
+        <text decode="{{true}}" user-select="true">&emsp;{{item.text4}}</text>
+      </view>
+      <view class="flex-sub  margin-top margin-left margin-bottom radius" >
+        <view class="cu-card case" :class="isCard?'no-card':''" >
+          <view class="image shadow">
+            <image class="round" src="{{item.pic2}}"
+            mode="widthFix"></image>
+            <view class="content flex-sub">
+							<view class="text-grey text-center">古镇风光</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>    
+  </view>
+  <!---->
+  <view class="cu-bar solid-bottom">
+			<view class="action">
+				<text class="cuIcon-titles text-blue">美食住宿</text>
+			</view>
+  </view>
+  <view class="padding bg-white">
+    <view class="action margin-bottom" style="font-weight: 600;text-align: center;">
+				<text decode="{{true}}" user-select="true" >【美食】</text>
+		</view>
+    <view class="flex bg-white">
+      <view class="flex-sub  margin-top margin-right margin-bottom radius" >
+        <view class="cu-card case" :class="isCard?'no-card':''" >
+          <view class="image shadow">
+            <image class="round" src="{{item.pic3}}"
+            mode="widthFix"></image><image class="round " src="{{item.pic4}}"
+            mode="widthFix"></image>
+            <view class="content flex-sub">
+							<view class="text-grey text-center">北塘美食</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="flex-twice  radius" >
+        <text decode="{{true}}" user-select="true">&emsp;{{item.text5}}</text>
+      </view>
+      
+    </view>
+    <view class="action margin-top margin-bottom" style="font-weight: 600;text-align: center;">
+				<text decode="{{true}}" user-select="true" >【住宿】</text>
+		</view>
+    <view class="flex bg-white">
+      <view class="flex-twice  radius" >
+        <text decode="{{true}}" user-select="true">&emsp;{{item.text6}}</text>
+      </view>
+      <view class="flex-sub  margin-top margin-left margin-bottom radius" >
+        <view class="cu-card case" :class="isCard?'no-card':''" >
+          <view class="image shadow">
+            <image class="round" src="{{item.pic5}}"
+            mode="widthFix"></image>
+            <image class="round" src="{{item.pic7}}"
+            mode="widthFix"></image>
+            <view class="content flex-sub">
+							<view class="text-grey text-center">同福客栈</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>    
+  </view>
+
+  <!---->
+  <view class="cu-bar solid-bottom">
+			<view class="action">
+				<text class="cuIcon-titles text-blue">古镇商业</text>
+			</view>
+  </view>
+  <view class="padding flex bg-white">
+      <view class="flex-twice  radius" >
+        <text decode="{{true}}" user-select="true">&emsp;{{item.text7}}</text>
+      </view>
+      <view class="flex-sub  margin-top margin-left margin-bottom radius" >
+        <view class="cu-card case" :class="isCard?'no-card':''" >
+          <view class="image shadow">
+            <image class="round" src="{{item.pic6}}"
+            mode="widthFix"></image>
+            
+            <view class="content flex-sub">
+							<view class="text-grey text-center">古镇商业</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      
+    </view>
+    <view class="margin flex bg-white"><text decode="{{true}}" user-select="true">&emsp;{{item.text8}}</text></view>
+    
+  <!---->
+  <view class="bg-white" style="height: 8vh;"></view>
+</view>
+
+<!--旅游指南-->
+<view wx:for='{{add}}' wx:for-item="item" hidden="{{currentTab!==1}}" class="bg-white">
+  <view class="imgs"> 
+    <map
+      subkey="SBVBZ-GEDKJ-C4WFK-KJGZN-QA6QZ-FMF44"
+      style="width: 100%; height: 100%;  position: relative;"
+      latitude=" {{latitude}}"
+      longitude="{{longitude}}" 
+      scale="{{scale}}"
+      markers="{{markers}}" 
+        
+      bindregionchange="bindregionchange" 
+      bindtap="bindtapMap" 
+      bindmarkertap="showModal" 
+      data-id="{{markers}}"
+
+      >
+    </map>
+    <!-- 以下是导航部分 -->
+    <view class='list-guide' bindtap="onGuideTap" data-latitude='{{latitude}}' data-longitude='{{longitude}}' data-scale="{{scale}}" data-bankName="{{item.title1}}">
+      <button class="round" style="width: 100%; font-size: 28rpx;">导航</button>
+    </view>
+
+  </view>
+
+  <!-- 路线 -->
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>地理位置
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">&emsp;天津市滨海新区北塘大街100号</text>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>旅游攻略
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">&emsp;1.古镇商业分为核心商业区、凤凰街、沽酒巷、双垒广场、清河会馆、观澜书院，共六大区域，此外还有同福客栈、茶楼、古镇剧院、工艺品商店等商家 ，多种商业形态共同成就了"新古镇"特色。\n&emsp;2.北塘古镇独有的护城河与城墙，更围合了古镇商业的人气。这种情况在整个华北地区都属罕见。凤凰街则是按照中国历史博物馆所存古镇布局恢复重建，街道两旁店铺林立，商品类型从时尚品牌至民宿工艺。\n&emsp;3.北塘地处天津市塘沽区北端，自然环境清幽宁静，自古素有"泽国之乡"之称，清初已是闻名津京及翼东一带的渔业重镇。北塘河岸为贝壳堤，河滩上稀泥没膝，宜于贝壳类水族生殖。春秋两季，滩上蛤、坚、螺唾手可得。空闲之际可以早起观赏海上姗姗升起的红日、潮起潮落的变化、忽东忽南的风向。象征性地参与驾驶、捕捞、分拣鱼获物等渔活儿体验一下当渔民的感觉。\n&emsp;通常5-9月为休渔期，此时不能出海打鱼。购买海鲜时注意商品是否有偷换，确定价钱后再购买品尝，谨防海鲜陷阱。</text>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>交通指南
+    </view>
+	</view>
+  <view class="margin">
+    <text style="font-weight: 900;line-height: 2;">天津方向:\n</text><text decode="{{true}}" user-select="true" style="line-height: 1.8;">开车: (1)津滨高速往塘洁方向，至开发区黄海路左转，沿黄海路向北直行，见彩虹大桥左转即到， (2) 京沪(原京津塘)高速往塘沽方向，至开发区黄海路左转，沿黄海路向北直行，见彩虹大桥左转即到， (3)从卫国道上津汉公路向东行驶12.5公里转至西大道，再接京津高速，至北塘收费站出，继续沿辅路直行8公里，至北塘大街北侧即到:公交:在天津站乘坐462至彩虹桥南站即到。或乘津滨轻轨至塘沽洋货站转乘103、133路北塘古镇站即到;</text>
+  </view>
+  <view class="margin">
+    <text style="font-weight: 900;line-height: 2;">滨海新区内:\n</text><text decode="{{true}}" user-select="true" style="line-height: 1.8;">&emsp;开车:周边道路:京津高速、津滨高速、京沪高速、津汉公路使得北京和天津市均可驱车快速到达。轻轨:规划中的Z2线从天津滨海国际机场直达北塘古镇，规划中的Z4线，使北塘古镇北接汉洁，南连于家堡商业中心，并实现与京津城际列车和津滨轻轨的无缝衔接。\n&emsp;公交: 乘103路、133路、520路、103路、519路、459路、506路、128路等至北塘古镇站下车。</text>
+  </view>
+  <view class="margin">
+    <text style="font-weight: 900;line-height: 2;">北京方向:\n</text><text decode="{{true}}" user-select="true" style="line-height: 1.8;">&emsp;开车:从东南五环化工桥进入京津高速，直行136公里至北塘收费站出，继续沿主路直行8公里，至北塘大街北侧即到，共计用时1个半小时左右。\n火车+公交: \n(1)北京南站乘北京至塘洁动车，约50分钟到达塘洁车站，出站后打车或乘520路公交至北塘古镇下车即到\n(2)北京南站乘北京至于家堡高铁站城际列车，约60分钟到达于家堡高铁站，出站后打车或乘坐103路公交车在北塘古镇站下车即到;</text>
+  </view>
+  <!---->
+  <view class="bg-white" style="height: 10vh;"></view>
+</view>

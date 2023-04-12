@@ -1,0 +1,217 @@
+<!--导航条-->
+<view wx:for='{{add}}' wx:for-item="item" class="solids-bottom padding-xs flex align-center">
+  <view class="bg">
+    <image class="" mode="scaleToFill"></image>
+  </view>
+  <view class="flex-sub text-center">
+    <view class="text-xxl padding">
+      <text class="text-white text-bold">{{item.title1}}</text>
+    </view>
+    <view class="text-white padding-bottom">{{item.title2}}</view>
+  </view>
+</view>
+<view class="navbar bg-white">
+ <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+<!--景区介绍-->
+<view wx:for='{{add}}' wx:for-item="item" hidden="{{currentTab!==0}}" class="bg-white">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="500">
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src1}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src2}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src3}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src4}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "scaleToFill" src="{{item.src5}}"/>
+    </swiper-item>
+  </swiper>
+
+  <view class="margin ">
+    <text decode="{{true}}" user-select="true">&emsp;&emsp;{{item.text1}}\n
+      &emsp;&emsp;{{item.text2}}</text>
+  </view>
+  <view class="cu-bar solid-bottom">
+			<view class="action">
+				<text class="cuIcon-titles text-blue">{{item.left1}}</text>
+			</view>
+  </view>
+  <view class="padding bg-white">
+    <view class="action margin-bottom" style="font-weight: 600;text-align: center;">
+				<text decode="{{true}}" user-select="true" > {{item.lt1}}</text>
+		</view>
+    <view class="flex bg-white">
+      <view class="flex-twice  radius" >
+        <text decode="{{true}}" user-select="true">&emsp;{{item.text3}}</text>
+      </view>
+      <view class="flex-sub  margin-top margin-left margin-bottom radius" >
+        <view class="cu-card case" :class="isCard?'no-card':''" >
+          <view class="image shadow">
+            <image class="round" src="{{item.pic1}}"
+            mode="widthFix"></image>
+            <view class="content flex-sub">
+							<view class="text-grey text-center">{{item.lt2}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>   
+  </view>
+  <!---->
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="font-weight: 600;">{{item.lt3}}</text><text>{{item.text4}}</text>
+  </view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="font-weight: 600;">{{item.lt4}}</text><text>{{item.text5}}</text>
+  </view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="font-weight: 600;">{{item.lt5}}</text><text>{{item.text6}}</text>
+  </view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="font-weight: 600;">{{item.lt6}}</text><text>{{item.text7}}</text>
+  </view>
+
+  <!---->
+  <view class="padding bg-white">
+    <view class="action margin-bottom" style="font-weight: 600;text-align: center;">
+				<text decode="{{true}}" user-select="true" > {{item.lt7}}</text>
+		</view>
+    <view class="flex">     
+      <view class="flex-sub  margin-top margin-right margin-bottom radius" >
+        <view class="cu-card case" :class="isCard?'no-card':''" >
+          <view class="image shadow">
+            <image class="round" src="{{item.pic2}}"
+            mode="widthFix"></image>
+            <view class="content flex-sub">
+							<view class="text-grey text-center">{{item.lt8}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="flex-twice  radius" >
+        <text decode="{{true}}" user-select="true">&emsp;&emsp;{{item.text8}}</text>
+      </view>
+    </view>  
+    <view class="flex margin-right margin-top">
+      <view class="flex-twice  radius" >
+        <text decode="{{true}}" user-select="true">&emsp;{{item.text9}}</text>
+      </view>
+      <view class="flex-sub margin-left  radius" >
+        <view class="cu-card case" :class="isCard?'no-card':''" >
+          <view class="image shadow">
+            <image src="{{item.pic3}}" style="width: 200rpx; border-radius: 10px;height: 200rpx; margin-top:20rpx;float: right; display: block; box-sizing: border-box"hspace="15rpx" vspace="15rpx">
+            </image>
+            <view class="content flex-sub">
+							<view class="text-grey text-center">{{item.lt8}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view> 
+  </view>
+  <!---->
+  <view class="padding bg-white">
+    <view class="action margin-bottom" style="font-weight: 600;text-align: center;">
+				<text decode="{{true}}" user-select="true" > {{item.lt9}}</text>
+		</view>
+    <view class="flex">     
+      <view class="flex-sub margin-right margin-bottom radius" >
+        <view class="cu-card case" :class="isCard?'no-card':''" >
+          <view class="image shadow">
+            <image class="round margin-top" src="{{item.pic4}}"
+            mode="widthFix" style="border-radius: 25px;"></image>
+            <view class="content flex-sub">
+							<view class="text-grey text-center">{{item.lt10}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="flex-twice  margin-bottom radius" >
+        <text decode="{{true}}" user-select="true">&emsp;&emsp;{{item.text10}}</text>
+      </view>
+    </view>
+
+    <view class="margin-bottom">
+      <text decode="{{true}}" user-select="true" style="line-height: 1.4;">&emsp;&emsp;{{item.text11}}</text>
+    </view>
+  </view>
+  <!---->
+  <view class="padding bg-white">
+    <view class="action" style="font-weight: 600;text-align: center;">
+				<text decode="{{true}}" user-select="true" > {{item.lt11}}</text>
+		</view>
+  </view>
+  <view class="flex bg-white">
+    <view class="flex-twice margin-left margin-right" >
+      <text decode="{{true}}" user-select="true" style="line-height: 1.4;">&emsp;{{item.text12}}</text>
+    </view>
+    <view class="flex-sub margin radius" >
+      <view class="cu-card case" :class="isCard?'no-card':''" >
+        <view class="image shadow">
+          <image class="" src="{{item.pic5}}"
+          mode="widthFix" style="border-radius: 20px;"></image>
+          <view class="content flex-sub">
+            <view class="text-grey text-center">{{item.lt12}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view> 
+  <!---->
+  <view class="bg-white" style="height: 8vh;"></view>
+</view>
+
+<!--旅游指南-->
+<view wx:for='{{add}}' wx:for-item="item" hidden="{{currentTab!==1}}" class="bg-white">
+  <view class="imgs"> 
+    <map
+      subkey="SBVBZ-GEDKJ-C4WFK-KJGZN-QA6QZ-FMF44"
+      style="width: 100%; height: 100%;  position: relative;"
+      latitude=" {{latitude}}"
+      longitude="{{longitude}}" 
+      scale="{{scale}}"
+      markers="{{markers}}" 
+        
+      bindregionchange="bindregionchange" 
+      bindtap="bindtapMap" 
+      bindmarkertap="showModal" 
+      data-id="{{markers}}"
+
+      >
+    </map>
+    <!-- 以下是导航部分 -->
+    <view class='list-guide' bindtap="onGuideTap" data-latitude='{{latitude}}' data-longitude='{{longitude}}' data-scale="{{scale}}" data-bankName="{{item.title1}}">
+      <button class="round" style="width: 100%; font-size: 28rpx;">导航</button>
+    </view>
+
+  </view>
+
+  <!-- 路线 -->
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>游玩路线
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">游览时间：3小时\n适合人群：朋友\n到达方式：公交\n途中景点： 津门故里牌坊> 天后宫 > 民俗文化馆 > 古玩城 > 商业广场 > 官银号 > 沽上艺苑 牌坊 > 玉皇阁 > 通庆里 > 文化小城 > 戏楼；</text>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>交通指南
+    </view>
+	</view>
+  <view class="margin">
+    <text style="font-weight: 900;line-height: 2;">自驾车:\n</text><text decode="{{true}}" user-select="true" style="line-height: 1.8;">1、市外（北京市-天津古文化街旅游区）\n途经：S30京津高速-下双街出口-京津快速-京津路-天泰路-黄纬路-五马路-海河东路-狮子林大街-张自忠路-景区正门\n需时：1小时45分钟;\n2、市内\n途经：黄河道-南马路-城厢东路-东马路-通北路-张自忠路-景区正门\n需时：11分钟;</text>
+  </view>
+  <view class="margin">
+    <text style="font-weight: 900;line-height: 2;">自由行:\n</text><text decode="{{true}}" user-select="true" style="line-height: 1.8;">1、公交\n公交车路线：15路、12路、856路、907路、861路、675路、681路、863路、903路、907路、469路\n目的地站点：东马路站\n票价：2元/人\n班次：10分钟/班\n首/末班车时间：06:00-21:00\n2、出租车\n起步价：11元</text>
+  </view>
+  <!---->
+  <view class="bg-white" style="height: 10vh;"></view>
+</view>

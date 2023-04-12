@@ -1,0 +1,42 @@
+<!-- wxml -->
+<view class="container">
+  <view class="padding bg-white">
+    <view class="flex">
+      <view class="" style=" display: inline-block;width: 24%;">选择地区</view>
+      <view class="" style="width: 100%;text-align: center;">选择非遗技艺/景区</view>
+    </view>
+	</view>
+<!-- 列表 -->
+	<view class="cate">
+		<!-- 左侧导航 -->
+		<scroll-view scroll-y class="nav-left">
+			<view 
+				wx:for="{{List}}"
+				wx:key="this"
+				class="nav-left-item {{currentIndex_L == index ? 'L-item-active' : ''}}" 
+				bindtap="bindleLeftItemTap" 
+				data-index="{{index}}" >
+				<text class="nav-left-item-txt {{currentIndex_L == index ? 'L-i-txt-active' : ''}}">{{item.LeftName}}</text>
+			</view>
+		</scroll-view>
+		<!-- 右侧导航 -->
+		<scroll-view scroll-y scroll-top="{{scrollTop}}" class="nav-right">
+			<view 
+				wx:for="{{List[currentIndex_L].RightList}}"
+				wx:key="this"
+				class="nav-right-item"
+				bindtap="bindleRightItemTap" 
+				data-index="{{index}}">
+        <view class="cu-item arrow" >
+          <view class="content">
+            <image class="image_radius" src="{{item.photo}}" style="height: 40px;width: 40px;border-radius: 30px;margin-left: 20px;margin-right: -10px;"/>
+          </view>
+        </view>
+        <text class="nav-right-item-txt {{currentIndex_R == index ? 'R-i-txt-active' : ''}}">{{item.RightName}}</text>
+        <view wx:if="{{item.is_travel ==true }}" class="cu-tag round bg-blue light" style="margin-right: 15px;">景区</view>
+			</view>
+		</scroll-view>
+	</view>
+</view>
+
+

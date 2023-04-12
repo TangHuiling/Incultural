@@ -1,0 +1,123 @@
+<!--导航条-->
+<view wx:for='{{add}}' wx:for-item="item" class="solids-bottom padding-xs flex align-center">
+  <view class="bg">
+    <image class="" mode="scaleToFill"></image>
+  </view>
+  <view class="flex-sub text-center">
+    <view class="text-xxl padding">
+      <text class="text-white text-bold">{{item.title1}}</text>
+    </view>
+    <view class="text-white padding-bottom">{{item.title2}}</view>
+  </view>
+</view>
+<view class="navbar bg-white">
+ <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+<!--景区介绍-->
+<view wx:for='{{add}}' wx:for-item="item" hidden="{{currentTab!==0}}" class="bg-white">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="500">
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src1}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src2}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src3}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src4}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src5}}"/>
+    </swiper-item>
+  </swiper>
+
+  <view class="margin ">
+    <text decode="{{true}}" user-select="true">&emsp;&emsp;{{item.text1}}\n
+      &emsp;&emsp;{{item.text2}}</text>
+  </view>
+  <view class="cu-bar solid-bottom">
+			<view class="action">
+				<text class="cuIcon-titles text-blue">历史背景</text>
+			</view>
+  </view>
+  <view style="width: 95%; margin: 0 auto; ">
+    <image class="margin-left"src="https://bkimg.cdn.bcebos.com/pic/1c950a7b02087bf419ec7285f2d3572c11dfcf5d?x-bce-process=image/resize,m_lfit,w_440,limit_1" style="width: 300rpx; border-radius: 8px;height: 254rpx; float: right; display: block; box-sizing: border-box"hspace="15rpx" vspace="15rpx">
+    </image>
+    <text class="margin " decode="{{true}}"  style="word-break:break-all;line-height: 1.8;" >&emsp;&emsp;{{item.text3}}\n</text> 
+  </view>
+  <view class="margin ">
+    <text decode="{{true}}" user-select="true"style="word-break:break-all;line-height: 1.8;">&emsp;&emsp;{{item.text4}}</text>
+  </view>
+  <view style="width: 95%; margin: 0 auto; ">
+    <image class="margin-right"src="https://bkimg.cdn.bcebos.com/pic/3801213fb80e7bec3ba8268d2f2eb9389b506b6f?x-bce-process=image/resize,m_lfit,w_440,limit_1" style="width: 300rpx; border-radius: 8px;height: 254rpx; float: left; display: block; box-sizing: border-box"hspace="15rpx" vspace="15rpx">
+    </image>
+    <text class="margin " decode="{{true}}"  style="word-break:break-all;line-height: 1.8;" >&emsp;&emsp;{{item.text5}}\n</text> 
+  </view>
+  <view class="margin ">
+    <text decode="{{true}}" user-select="true"style="word-break:break-all;line-height: 1.8;">&emsp;&emsp;{{item.text6}}</text>
+  </view>
+  <!---->
+  
+
+ 
+  <view class="bg-white" style="height: 8vh;"></view>
+</view>
+
+<!--旅游指南-->
+<view wx:for='{{add}}' wx:for-item="item" hidden="{{currentTab!==1}}" class="bg-white">
+  <view class="imgs"> 
+    <map
+      subkey="SBVBZ-GEDKJ-C4WFK-KJGZN-QA6QZ-FMF44"
+      style="width: 100%; height: 100%;  position: relative;"
+      latitude=" {{latitude}}"
+      longitude="{{longitude}}" 
+      scale="{{scale}}"
+      markers="{{markers}}" 
+        
+      bindregionchange="bindregionchange" 
+      bindtap="bindtapMap" 
+      bindmarkertap="showModal" 
+      data-id="{{markers}}"
+
+      >
+    </map>
+    <!-- 以下是导航部分 -->
+    <view class='list-guide' bindtap="onGuideTap" data-latitude='{{latitude}}' data-longitude='{{longitude}}' data-scale="{{scale}}" data-bankName="{{item.title1}}">
+      <button class="round" style="width: 100%; font-size: 28rpx;">导航</button>
+    </view>
+
+  </view>
+
+  <!-- 路线 -->
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>地理位置
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">天津市西青区精武镇小南河村</text>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>开放时间
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">&emsp;旺季：08：00-17：00\n&emsp;淡季：08：30-16：00</text>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>交通指南
+    </view>
+	</view>
+  <view class="margin">
+    <text style="font-weight: 900;line-height: 2;">乘车路线:\n</text><text decode="{{true}}" user-select="true" style="line-height: 1.8;">&emsp;乘坐157路、津西1路、西青便民1路，到第二体育运动学校下车，后沿团泊大道步行即可。</text>
+  </view>
+  <view class="margin">
+    <text style="font-weight: 900;line-height: 2;">自驾路线:\n</text><text decode="{{true}}" user-select="true" style="line-height: 1.8;">&emsp;从天津出发，沿大沽南路一隆昌路一黑牛城道一津涞公路一团泊大道行驶，过“精武门·中华武林园”雕塑后即可。</text>
+  </view>
+  <!---->
+  <view class="bg-white" style="height: 10vh;"></view>
+</view>

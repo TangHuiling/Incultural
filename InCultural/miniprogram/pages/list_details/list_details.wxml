@@ -1,0 +1,78 @@
+<view  wx:for='{{add}}' wx:for-item="item" class="container">
+<view class="bg-img" >
+  <image class='image' src='cloud://cloud1-3gh117wta198d6cd.636c-cloud1-3gh117wta198d6cd-1314390452/swiper1/书卷.png'></image>
+  
+  <view class="child">
+    <view class="title">
+      <view wx:for='{{add}}' wx:for-item="item" class="action">
+        <text>{{item.name}}</text>
+      </view>
+    </view> 
+    <view class="flex align-center">
+      <view class="word1">非遗类别:</view>
+      <view wx:for='{{add}}' wx:for-item="item" class="word2">{{item.type}}</view>
+    </view>
+    <view class="flex align-center">
+      <view class="word1">非遗级别:</view>
+      <view wx:for='{{add}}' wx:for-item="item" class="word2">{{item.level}}</view>
+    </view>
+    <view class="flex align-center">
+      <view class="word1">保护单位:</view>
+      <view wx:for='{{add}}' wx:for-item="item" class="word2">{{item.unit}}</view>
+    </view>
+    <view class="flex align-center">
+      <view class="word1">所属地区:</view>
+      <view wx:for='{{add}}' wx:for-item="item" class="word2">{{item.area}}</view>
+    </view>
+  </view>
+</view>
+<view class="cu-bar bg-white solid-bottom margin-bottom">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>项目简介
+    </view>
+</view>
+<view wx:for='{{add}}' wx:for-item="item" class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">&emsp;{{item.text1}}\n&emsp;{{item.text2}}\n&emsp;{{item.text3}}\n&emsp;{{item.text4}}\n&emsp;{{item.text5}}\n&emsp;{{item.text6}}</text>
+</view>
+<view class="cu-bar bg-white  ">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>图片资料
+    </view>
+</view>
+<view class="section">
+  <view class="tui-table-view">
+    <view class="tui-col-3">
+      <image class="" src="{{item.pic1}}"mode="widthFix"></image>
+    </view>
+    <view class="tui-col-3">
+      <image class="" src="{{item.pic2}}"mode="widthFix"></image>
+    </view>
+    <view class="tui-col-3">
+      <image class="" src="{{item.pic3}}"mode="widthFix"></image>
+    </view>
+    <view class="tui-col-3">
+      <image class="" src="{{item.pic4}}"mode="widthFix"></image>
+    </view>
+    <view class="tui-col-3">
+      <image class="" src="{{item.pic5}}"mode="widthFix"></image>
+    </view>
+    <view class="tui-col-3">
+      <image class="" src="{{item.pic6}}"mode="widthFix"></image>
+    </view>
+    <view class="tui-col-3">
+      <image class="" src="{{item.pic7}}"mode="widthFix"></image>
+    </view>
+    <view class="tui-col-3">
+      <image class="" src="{{item.pic8}}"mode="widthFix"></image>
+    </view>
+    <view class="tui-col-3">
+      <image class="" src="{{item.pic9}}"mode="widthFix"></image>
+    </view>
+  </view>
+</view>
+<!---->
+<view class="bg-white" style="height: 10vh;"></view>
+
+
+</view>
+

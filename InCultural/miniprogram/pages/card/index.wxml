@@ -1,0 +1,16 @@
+<!--pages/card/index.wxml-->
+<view class="shadow bg-white card" bindtap="topeople" data-index="{{index}}"
+    wx:for='{{people_list}}' wx:for-item="item">
+
+		<view class="round lg img_card">
+      <image class="img_card"
+    src="{{item.fileID}}"></image>
+    </view>
+
+    <view class="text-grey name_text" >
+      <text>{{item.name}}\n</text>
+      <text>\n</text>
+      <text class="cut text-gray">{{item.introduce}}</text>
+    </view>
+
+</view>

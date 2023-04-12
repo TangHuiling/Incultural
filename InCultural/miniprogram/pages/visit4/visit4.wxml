@@ -1,0 +1,120 @@
+<!--导航条-->
+<view wx:for='{{add}}' wx:for-item="item" class="solids-bottom padding-xs flex align-center">
+  <view class="bg">
+    <image class="" mode="scaleToFill"></image>
+  </view>
+  <view class="flex-sub text-center">
+    <view class="text-xxl padding">
+      <text class="text-white text-bold">{{item.title1}}</text>
+    </view>
+    <view class="text-white padding-bottom">{{item.title2}}</view>
+  </view>
+</view>
+<view class="navbar bg-white">
+ <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+<!--景区介绍-->
+<view wx:for='{{add}}' wx:for-item="item" hidden="{{currentTab!==0}}" class="bg-white">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="500">
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src1}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src2}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src3}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src4}}"/>
+    </swiper-item>
+    <swiper-item>
+      <image class="img" mode= "aspectFill" src="{{item.src5}}"/>
+    </swiper-item>
+  </swiper>
+
+  <view class="margin ">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">&emsp;&emsp;{{item.text1}}</text>
+  </view>
+  <view class="cu-bar solid-bottom">
+			<view class="action">
+				<text class="cuIcon-titles text-blue">基本概况</text>
+			</view>
+  </view>
+  <view style="width: 95%; margin: 0 auto; ">
+    <image class="margin-left margin-top"src="https://img0.baidu.com/it/u=1306176162,3009350794&fm=253&fmt=auto&app=120&f=JPEG?w=1142&h=635" style="width: 300rpx; border-radius: 8px;height: 254rpx; float: right; display: block; box-sizing: border-box"hspace="15rpx" vspace="15rpx">
+    </image>
+    <text class="margin " decode="{{true}}"  style="word-break:break-all;line-height: 1.8;" >&emsp;&emsp;{{item.text2}}\n&emsp;&emsp;{{item.text3}}\n</text> 
+  </view>
+  <view class="margin" style="width: 95%; ">
+    <image class="margin-right margin-top"src="https://img2.baidu.com/it/u=2195762981,845913255&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=333" style="width: 300rpx; border-radius: 8px;height: 254rpx; float: left; display: block; box-sizing: border-box"hspace="15rpx" vspace="15rpx">
+    </image>
+    <text class="margin " decode="{{true}}"  style="word-break:break-all;line-height: 1.8;" >&emsp;&emsp;{{item.text4}}\n&emsp;&emsp;{{item.text5}}\n</text> 
+  </view>
+
+
+  <!---->
+  <view class="bg-white" style="height: 8vh;"></view>
+</view>
+
+<!--旅游指南-->
+<view wx:for='{{add}}' wx:for-item="item" hidden="{{currentTab!==1}}" class="bg-white">
+  <view class="imgs"> 
+    <map
+      subkey="SBVBZ-GEDKJ-C4WFK-KJGZN-QA6QZ-FMF44"
+      style="width: 100%; height: 100%;  position: relative;"
+      latitude=" {{latitude}}"
+      longitude="{{longitude}}" 
+      scale="{{scale}}"
+      markers="{{markers}}" 
+        
+      bindregionchange="bindregionchange" 
+      bindtap="bindtapMap" 
+      bindmarkertap="showModal" 
+      data-id="{{markers}}"
+
+      >
+    </map>
+    <!-- 以下是导航部分 -->
+    <view class='list-guide' bindtap="onGuideTap" data-latitude='{{latitude}}' data-longitude='{{longitude}}' data-scale="{{scale}}" data-bankName="{{item.title1}}">
+      <button class="round" style="width: 100%; font-size: 28rpx;">导航</button>
+    </view>
+
+  </view>
+
+  <!-- 路线 -->
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>景点地址
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">天津南开区白提路82号</text>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>门票
+    </view>
+	</view>
+  <view class="margin">
+    <text decode="{{true}}" user-select="true" style="line-height: 1.8;">普通成人票价为50元，儿童票为半价25元，65岁以上老年人、现役军人、伤残军人凭证免票入园参观，10人以上团体票价为每人25元。</text>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>开放时间
+    </view>
+	</view>
+  <view class="margin">
+    <text style="line-height: 2;">9：00—17：00</text>
+  </view>
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action"style="font-weight: 600;">
+      <text class="cuIcon-title text-blue " ></text>乘车线路
+    </view>
+	</view>
+  <view class="margin">
+    <text style="line-height: 2;">可乘609路、640路、849路、859路等公交在南开文化宫站下；</text>
+  </view>
+  <!---->
+  <view class="bg-white" style="height: 10vh;"></view>
+</view>
